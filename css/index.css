@@ -1,0 +1,29 @@
+body {
+  background-color: #282727;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 700px; /* Максимальная высота */
+  height: auto;
+  object-fit: cover; /* Заполняет пространство без искажений */
+}
+
+.header {
+  /* Полупрозрачный фон (почти прозрачный) */
+  background: rgba(21, 21, 21, 0.144); /* Белый, прозрачность 15% */
+
+  /* Размытие фона за шапкой (эффект "матового стекла") */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(12px); /* Для Safari */
+  box-shadow: none;
+
+  /* Остальные стили шапки */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,61 @@
+body {
+  background-color: #171616;
+}
+
+p {
+  color: white;
+}
+
+.contact__content {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+  gap: 40px;
+}
+
+.adress,
+.contact,
+.email {
+  margin-bottom: 50px;
+}
+
+.adres-title,
+.contact-title,
+.email-title,
+.map-title {
+  font-size: 28px;
+  color: rgba(235, 233, 233, 0.921);
+  margin-bottom: 10px;
+  border-left: 2px solid rgb(224, 27, 27);
+  padding-left: 10px;
+}
+
+.adres-txt,
+.contact-txt,
+.email-txt,
+.map-txt {
+  font-size: 18px;
+  color: rgba(216, 216, 216, 0.97);
+}
+
+.map-img {
+  height: auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.contact_text_content,
+.adress_content,
+.email_content,
+.map_content {
+
+  background-color: #100f0f;
+  border: 1px solid gray;
+  border-radius: 10px;
+  height: 300px;
+  gap: 40px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(93, 92, 92, 0.612);
+}

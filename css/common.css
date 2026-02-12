@@ -1,0 +1,131 @@
+/* all */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+}
+
+a {
+  color: rgb(229, 226, 226);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+/* header */
+.header {
+  background-color: #100f0f;
+  box-shadow: 0 10px 12px rgba(17, 17, 17, 0.844);
+  padding: 10px 15px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__nav-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__nav {
+  display: flex;
+  gap: 70px;
+
+  margin: 0 auto;
+}
+
+/* header__logo */
+
+.header__logo {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+.header__spacer {
+  flex: 0 0 auto; /* пустой блок справа для симметрии */
+  width: 120px; /* можно подобрать под дизайн */
+  justify-content: end;
+  display: flex;
+  margin-right: 30px;
+}
+
+.header__logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(224, 27, 27);
+}
+
+.header__logo-NE {
+  color: #edeaea;
+}
+
+/* header__link */
+
+.header__nav-link {
+  font-weight: 600;
+  font-size: 19px;
+}
+.header__nav-link:hover {
+  color: rgb(164, 34, 34);
+}
+
+.header__nav-btn {
+  font-size: 16px;
+  color: #edeaea;
+  display: flex;
+  justify-content: center;
+  border: none;
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 10px;
+  background-color: rgba(80, 74, 74, 0.663);
+}
+
+.header__nav-btn:hover {
+  background-color: rgba(164, 34, 34, 0.648);
+}
+
+.header__nav-generes {
+  color: rgb(5, 5, 5);
+}
+.header__nav-generes:hover {
+  color: rgb(164, 34, 34);
+}
