@@ -16,34 +16,41 @@ include 'partials/header.php';
 </head>
 
 <body>
-
-    <div id="myCarousel" class="carousel slide mt-2" data-bs-ride="carousel">
-        <!-- Индикаторы -->
-        <div class="carousel-indicators">
+    <!-- Индикаторы -->
+    <!-- <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-        </div>
+        </div> -->
 
-        <!-- Слайды -->
-        <div class="carousel-inner ">
-            <div class="carousel-item active ">
-                <img src="media/images/interst-2.jfif" class=" img-carousel d-block w-100 " alt="...">
+    <div class="slider">
+        <div class="slide">
+            <div class="image-wrap">
+                <img src="media/images/кинозал.jfif" alt="Кинозал">
             </div>
-            <!-- <div class="carousel-item">
-                <img src="media/images/" class="img-carousel d-block w-100 " alt="...">
-            </div> -->
+            <div class="slide-caption">
+                <h1 class="slide-logo">Ne<span>NetFlix</span></h1>
+                <p class="slide-p">Современные кинозалы и низкие цены</p>
+                <a href="page/contact.php" class="slide-btn">Подробнее</a>
+            </div>
+
+        </div>
+        <div class="slide">
+            <div class="image-wrap">
+                <img src="media/images/interst-2.jfif" alt="Интерстеллар">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-wrap">
+                <img src="media/images/осд.jpg" alt="Следующая">
+            </div>
         </div>
 
-        <!-- Кнопки управления -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
+        <button id="left-btn" class="nav-btn"><img src="media/images/left.png" alt=""></button>
+        <button id="right-btn" class="nav-btn"><img src="media/images/right.png" alt=""></button>
     </div>
 
-<?php include 'partials/footer.php'; ?>
+    <?php include 'partials/footer.php'; ?>
+    <script src="js/slider.js"></script>
 
 </body>
 

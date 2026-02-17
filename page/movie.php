@@ -37,7 +37,7 @@ $result = $con->query($sql);
 // Жанры из базы
 $genresResult = $con->query("SELECT * FROM genres");
 $genres = [];
-while ($g = $genresResult->fetch_assoc()) {
+while ($g = $genresResult->fetch()) {
     $genres[] = $g;
 }
 ?>
@@ -52,53 +52,54 @@ while ($g = $genresResult->fetch_assoc()) {
 </head>
 
 <body>
+    <div class="afisha_layout">
+        <div class="page">
+            <h1 class="page-title">Афиша</h1>
 
-    <div class="page">
-        <h1 class="page-title">Афиша</h1>
+            <div class="filters">
+                <div class="filters-left">
+                    <span>Сортировать:</span>
 
-        <div class="filters">
-            <div class="filters-left">
-                <span>Сортировать:</span>
+                    <a href="?sort=new&genre=<?= $genre_id ?>" class="btn <?= $sort == 'new' ? 'active' : '' ?>">По новизне</a>
+                    <a href="?sort=date&genre=<?= $genre_id ?>" class="btn <?= $sort == 'date' ? 'active' : '' ?>">По дате</a>
+                    <a href="?sort=title&genre=<?= $genre_id ?>" class="btn <?= $sort == 'title' ? 'active' : '' ?>">По названию</a>
+                    <a href="?sort=age&genre=<?= $genre_id ?>" class="btn <?= $sort == 'age' ? 'active' : '' ?>">По возрасту</a>
+                </div>
 
-                <a href="?sort=new&genre=<?= $genre_id ?>" class="btn <?= $sort == 'new' ? 'active' : '' ?>">По новизне</a>
-                <a href="?sort=date&genre=<?= $genre_id ?>" class="btn <?= $sort == 'date' ? 'active' : '' ?>">По дате</a>
-                <a href="?sort=title&genre=<?= $genre_id ?>" class="btn <?= $sort == 'title' ? 'active' : '' ?>">По названию</a>
-                <a href="?sort=age&genre=<?= $genre_id ?>" class="btn <?= $sort == 'age' ? 'active' : '' ?>">По возрасту</a>
+                <form method="get" class="genre-form">
+                    <label class="genre-label">Жанр</label>
+
+                    <select name="genre" class="custom-select" onchange="this.form.submit()">
+                        <option value="">Все</option>
+                        <?php foreach ($genres as $g): ?>
+                            <option value="<?= $g['id'] ?>" <?= $genre_id == $g['id'] ? 'selected' : '' ?>>
+                                <?= $g['name'] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <input type="hidden" name="sort" value="<?= $sort ?>">
+                </form>
             </div>
 
-            <form method="get" class="genre-form">
-                <label class="genre-label">Жанр</label>
-
-                <select name="genre" class="custom-select" onchange="this.form.submit()">
-                    <option value="">Все</option>
-                    <?php foreach ($genres as $g): ?>
-                        <option value="<?= $g['id'] ?>" <?= $genre_id == $g['id'] ? 'selected' : '' ?>>
-                            <?= $g['name'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-
-                <input type="hidden" name="sort" value="<?= $sort ?>">
-            </form>
-        </div>
-
-        <div class="cards">
-            <?php while ($movie = $result->fetch_assoc()): ?>
-                <a href="/page/movie_single.php?id=<?= $movie['id'] ?>" class="card">
-                    <img src="/<?= $movie['image_path'] ?>" class="card-img" alt="<?= $movie['title'] ?>">
-                    <div class="card-info">
-                        <div class="card-title"><?= $movie['title'] ?></div>
-                        <div class="card-meta">
-                            <span class="card-price"><?= $movie['price'] ?> ₽</span>
-                            <span class="card-age"><?= $movie['age_rating'] ?></span>
-                            <span class="card-date"><?= date('d.m.Y', strtotime($movie['show_date'])) ?></span>
+            <div class="cards">
+                <?php while ($movie = $result->fetch()): ?>
+                    <a href="/page/movie_single.php?id=<?= $movie['id'] ?>" class="card">
+                        <img src="/<?= $movie['image_path'] ?>" class="card-img" alt="<?= $movie['title'] ?>">
+                        <div class="card-info">
+                            <div class="card-title"><?= $movie['title'] ?></div>
+                            <div class="card-meta">
+                                <span class="card-price"><?= $movie['price'] ?> ₽</span>
+                                <span class="card-age"><?= $movie['age_rating'] ?></span>
+                                <span class="card-date"><?= date('d.m.Y', strtotime($movie['show_date'])) ?></span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            <?php endwhile; ?>
+                    </a>
+                <?php endwhile; ?>
+            </div>
         </div>
+        <?php include '../partials/footer.php'; ?>
     </div>
-    <?php include '../partials/footer.php'; ?>
 
 </body>
 

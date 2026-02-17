@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/init.php';
 require_once 'auth.php';
 
-// ОБРАБОТКА ФОРМЫ (ДОЛЖНА БЫТЬ ПЕРЕД header.php)
+// ОБРАБОТКА ФОРМЫ 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_genre'])) {
     $name = $_POST['genre_name'];
     $con->query("INSERT INTO genres (name) VALUES ('$name')");

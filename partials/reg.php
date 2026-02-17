@@ -64,6 +64,6 @@ include '../partials/header.php';
     </form>
 </div>
 
-<?php include 'partials/footer.php'; ?>
+<?php include 'footer.php'; ?>
 </body>
 </html>

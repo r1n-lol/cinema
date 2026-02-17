@@ -35,7 +35,7 @@ $result = $con->query("SELECT * FROM movies ORDER BY created_at DESC LIMIT 5");
 
         <!-- Блок новых сеансов -->
         <div class="new-seans-grid">
-            <?php while ($movie = $result->fetch_assoc()): ?>
+            <?php while ($movie = $result->fetch()): ?>
                 <a href="/page/movie_single.php?id=<?= $movie['id']; ?>" class="new-seans-card">
                     <img src="/<?= $movie['image_path']; ?>" alt="<?= $movie['title']; ?>" class="new-seans-img">
                     <div class="new-seans-title"><?= $movie['title']; ?></div>

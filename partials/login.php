@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql = "SELECT * FROM users WHERE login = '$login' AND password = '$password'";
     $res = $con->query($sql);
-    $user = $res->fetch_assoc();
+    $user = $res->fetch();
 
     if ($user) {
         $_SESSION['user_id'] = $user['id'];

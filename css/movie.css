@@ -4,10 +4,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.afisha_layout{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.afisha_layout .page{
+  flex: 1;
+}
+
 .page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  flex: 1;
+  width: 100%;
 }
 
 .page-title {
