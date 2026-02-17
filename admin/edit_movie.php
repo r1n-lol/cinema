@@ -8,7 +8,7 @@ include '../partials/header.php';
 $id = (int)$_GET['id'];
 
 $result = $con->query("SELECT * FROM movies WHERE id = $id");
-$movie = $result->fetch_assoc();
+$movie = $result->fetch();
 
 $genres = $con->query("SELECT * FROM genres");
 
@@ -44,7 +44,7 @@ if (!$movie) {
             <select name="genre_id" class="custom-select" required>
                 <?php
                 $genresResult = $con->query("SELECT * FROM genres");
-                while ($g = $genresResult->fetch_assoc()) {
+                while ($g = $genresResult->fetch()) {
                     $selected = ($movie['genre_id'] == $g['id']) ? 'selected' : '';
                     echo "<option value='{$g['id']}' $selected>{$g['name']}</option>";
                 }

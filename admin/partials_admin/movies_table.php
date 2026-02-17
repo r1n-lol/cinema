@@ -24,7 +24,7 @@ $result = $con->query("SELECT m.*, g.name AS genre_name
         </thead>
 
         <tbody>
-            <?php while ($row = $result->fetch_assoc()) : ?>
+            <?php while ($row = $result->fetch()) : ?>
                 <tr>
                     <td><img src="/<?= $row['image_path']; ?>" class="poster"></td>
                     <td><?= $row['title']; ?></td>

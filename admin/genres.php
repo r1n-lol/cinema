@@ -46,7 +46,7 @@ $genres = $con->query("SELECT * FROM genres");
             </tr>
         </thead>
         <tbody>
-            <?php while ($g = $genres->fetch_assoc()): ?>
+            <?php while ($g = $genres->fetch()): ?>
             <tr>
                 <td><?= $g['id'] ?></td>
                 <td><?= $g['name'] ?></td>

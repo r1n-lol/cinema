@@ -28,7 +28,7 @@ $genres = $con->query("SELECT * FROM genres");
         <div class="form-row">
             <label><a href="genres.php" class="header__nav-generes">Жанры</a></label>
             <select name="genre_id">
-                <?php while ($g = $genres->fetch_assoc()): ?>
+                <?php while ($g = $genres->fetch()): ?>
                     <option value="<?= $g['id'] ?>"><?= $g['name'] ?></option>
                 <?php endwhile; ?>
             </select>

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // получаем текущий genre_id
     $res = $con->query("SELECT image_path, genre_id FROM movies WHERE id = $id");
-    $movie = $res->fetch_assoc();
+    $movie = $res->fetch();
     $image_path = $movie['image_path'];
 
     // если в форме пришёл genre_id
